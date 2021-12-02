@@ -20,9 +20,15 @@ let newCard = document.createElement("div");
 newCard.className = "card";
 newCard.addEventListener("click", () => {
     newCard.style.backgroundColor = "lightgrey";
-})
+});
 main.append(newCard);
 };
+
+/*
+for (i = 0; i < animals.length * 2; i++) {
+    console.log(animals);
+};
+*/
 
 
 
