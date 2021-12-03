@@ -38,14 +38,17 @@ cardArray.forEach((item) => {
   const card = document.createElement("div");
   card.classList.add("scene");
   grid.append(card);
+  const card2 = document.createElement("div");
+  card2.classList.add("cardContainer");
+  card.appendChild(card2);
 });
 
 // ADDING CARD CONTAINER
-cardArray.forEach((item) => {
-  const card = document.createElement("div");
-  card.classList.add("cardContainer");
-  document.body.main.grid.scene.appendParent(card);
-});
+// cardArray.forEach((item) => {
+//   const card = document.createElement("div");
+//   card.classList.add("cardContainer");
+//   grid.append(card);
+// });
 
 // ADDING CARD IMAGE
 // cardArray.forEach((item) => {
