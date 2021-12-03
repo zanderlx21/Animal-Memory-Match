@@ -29,41 +29,36 @@ startBtn.addEventListener("click", () => {
 });
 
 const scene = document.querySelector(".scene");
-const cardContainer = document.querySelector(".cardContainer");
+// const cardContainer = document.querySelector(".cardContainer");
 const cardFront = document.querySelector(".cardFront");
 const cardBack = document.querySelector(".cardBack");
 
 // ADDING PARENT CONTAINER SCENE
 cardArray.forEach((item) => {
+  // CARD
   const card = document.createElement("div");
-  card.classList.add("scene");
+  card.classList.add("card");
+  card.dataset.name = item.value;
   grid.append(card);
+  // CARD FRONT
   const card2 = document.createElement("div");
-  card2.classList.add("cardContainer");
+  card2.classList.add("cardFront");
+  card2.style.backgroundImage = `url(${item.img})`;
+  //   card2.dataset.name = item.value;
   card.appendChild(card2);
+  // CARD BACK
+  const card3 = document.createElement("div");
+  card3.classList.add("cardBack");
+  //   card3.dataset.name = item.value;
+  //   card3.style.backgroundColor = "red";
+  card.appendChild(card3);
 });
 
-// ADDING CARD CONTAINER
-// cardArray.forEach((item) => {
-//   const card = document.createElement("div");
-//   card.classList.add("cardContainer");
-//   grid.append(card);
-// });
-
-// ADDING CARD IMAGE
 // cardArray.forEach((item) => {
 //   const card = document.createElement("div");
 //   card.classList.add("card");
 //   card.dataset.name = item.value;
 //   card.style.backgroundImage = `url(${item.img})`;
-//   grid.appendChild(card);
-// });
-
-// ADDING CARD BACK
-// cardArray.forEach((item) => {
-//   const card = document.createElement("div");
-//   card.classList.add("cardBack");
-//   card.style.backgroundColor = "red";
 //   grid.appendChild(card);
 // });
 
@@ -96,8 +91,8 @@ grid.addEventListener("click", function (e) {
   const clicked = e.target;
   if (
     clicked.nodeName === "SECTION" ||
-    clicked.classList.contains("selected") ||
-    clicked.classList.contains("match")
+    clicked.parentNode.classList.contains("selected") ||
+    clicked.parentNode.classList.contains("match")
   ) {
     return;
   }
@@ -105,11 +100,11 @@ grid.addEventListener("click", function (e) {
   if (counter < 2) {
     counter++;
     if (counter === 1) {
-      firstGuess = clicked.dataset.name;
-      clicked.classList.add("selected");
+      firstGuess = clicked.parentNode.dataset.name;
+      clicked.parentNode.classList.add("selected");
     } else {
-      secondGuess = clicked.dataset.name;
-      clicked.classList.add("selected");
+      secondGuess = clicked.parentNode.dataset.name;
+      clicked.parentNode.classList.add("selected");
     }
     if (firstGuess && secondGuess) {
       if (firstGuess === secondGuess) {
