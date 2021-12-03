@@ -38,26 +38,37 @@ let counter = 0;
 let firstGuess = 0;
 let secondGuess = 0;
 
+const match = () => {
+  let selected = document.querySelectorAll(".selected");
+  selected.forEach((card) => {
+    card.classList.add("match");
+    card.classList.remove("selected");
+  });
+  firstGuess = 0;
+  secondGuess = 0;
+  counter = 0;
+};
+
+const noMatch = () => {
+  let selected = document.querySelectorAll(".selected");
+  selected.forEach((card) => {
+    card.classList.remove("selected");
+  });
+  firstGuess = 0;
+  secondGuess = 0;
+  counter = 0;
+};
+
 grid.addEventListener("click", function (e) {
-  let clicked = e.target;
-
-  const match = () => {
-    let selected = document.querySelectorAll(".selected");
-    selected.forEach((card) => {
-      card.classList.add("match");
-    });
-  };
-
-  const noMatch = () => {
-    let selected = document.querySelectorAll(".selected");
-    selected.forEach((card) => {
-      clicked.classList.remove("selected");
-    });
-  };
-
-  if (clicked.nodeName === "SECTION") {
+  const clicked = e.target;
+  if (
+    clicked.nodeName === "SECTION" ||
+    clicked.classList.contains("selected") ||
+    clicked.classList.contains("match")
+  ) {
     return;
   }
+
   if (counter < 2) {
     counter++;
     if (counter === 1) {
@@ -67,9 +78,12 @@ grid.addEventListener("click", function (e) {
     } else {
       secondGuess = clicked.dataset.name;
       clicked.classList.add("selected");
+      console.log(secondGuess);
+      console.log(counter);
     }
     if (firstGuess === secondGuess) {
       match();
     }
   }
 });
+// console.log(counter);
