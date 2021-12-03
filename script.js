@@ -79,7 +79,9 @@ const match = () => {
 const noMatch = () => {
   let selected = document.querySelectorAll(".selected");
   selected.forEach((card) => {
-    card.classList.remove("selected");
+    setTimeout(() => {
+      card.classList.remove("selected");
+    }, 1000);
   });
   firstGuess = 0;
   secondGuess = 0;
