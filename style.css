@@ -22,11 +22,6 @@ body {
   justify-content: space-evenly;
 }
 
-.scene {
-  height: 150 px;
-  width: 150 px;
-}
-
 .card {
   position: relative;
   transition: all 0.4s linear;
@@ -58,22 +53,18 @@ body {
   transform: rotateY(180deg);
   /* background-color: white; */
   background-size: contain;
-  background-repeat: no-repeat;
+  /* background-repeat: no-repeat; */
   background-position: center center;
-  background: contain;
 }
 
 .selected {
-  /* border: 2px solid blue; */
   transform: rotateY(180deg);
-  background-color: white;
 }
 
 .match .cardBack {
-  /* background-color: white; */
-  /* opacity: 0; */
+  background-color: none;
 }
 
-.match {
-  /* background-image: none; */
-}
+/* .match {
+  background-image: none;
+} */
