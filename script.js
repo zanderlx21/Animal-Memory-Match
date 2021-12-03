@@ -70,7 +70,6 @@ const match = () => {
   let selected = document.querySelectorAll(".selected");
   selected.forEach((card) => {
     card.classList.add("match");
-    card.classList.remove("selected");
   });
   firstGuess = 0;
   secondGuess = 0;
@@ -109,8 +108,9 @@ grid.addEventListener("click", function (e) {
     if (firstGuess && secondGuess) {
       if (firstGuess === secondGuess) {
         match();
+      } else {
+        noMatch();
       }
-      noMatch();
     }
   }
 });
