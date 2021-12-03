@@ -19,20 +19,50 @@ const start = document.getElementById("start");
 const startBtn = document.getElementById("startBtn");
 const main = document.getElementById("main");
 const grid = document.createElement("section");
+
 grid.setAttribute("class", "grid");
+
 main.appendChild(grid);
 
 startBtn.addEventListener("click", () => {
   start.remove();
 });
 
+const scene = document.querySelector(".scene");
+const cardContainer = document.querySelector(".cardContainer");
+const cardFront = document.querySelector(".cardFront");
+const cardBack = document.querySelector(".cardBack");
+
+// ADDING PARENT CONTAINER SCENE
 cardArray.forEach((item) => {
   const card = document.createElement("div");
-  card.classList.add("card");
-  card.dataset.name = item.value;
-  card.style.backgroundImage = `url(${item.img})`;
-  grid.appendChild(card);
+  card.classList.add("scene");
+  grid.append(card);
 });
+
+// ADDING CARD CONTAINER
+cardArray.forEach((item) => {
+  const card = document.createElement("div");
+  card.classList.add("cardContainer");
+  document.body.main.grid.scene.appendParent(card);
+});
+
+// ADDING CARD IMAGE
+// cardArray.forEach((item) => {
+//   const card = document.createElement("div");
+//   card.classList.add("card");
+//   card.dataset.name = item.value;
+//   card.style.backgroundImage = `url(${item.img})`;
+//   grid.appendChild(card);
+// });
+
+// ADDING CARD BACK
+// cardArray.forEach((item) => {
+//   const card = document.createElement("div");
+//   card.classList.add("cardBack");
+//   card.style.backgroundColor = "red";
+//   grid.appendChild(card);
+// });
 
 let counter = 0;
 let firstGuess = 0;

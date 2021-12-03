@@ -22,14 +22,28 @@ body {
   justify-content: space-evenly;
 }
 
+.scene {
+  height: 150 px;
+  width: 150 px;
+}
+
 .card {
   margin: 5px;
-  /* background-color: rgb(39, 39, 209); */
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center center;
   height: 150px;
   width: 150px;
+}
+
+.cardBack {
+  margin: 5px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 150px;
+  width: 150px;
+  position: absolute;
 }
 
 .selected {
