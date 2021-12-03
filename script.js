@@ -63,6 +63,7 @@ grid.addEventListener("click", function (e) {
     if (counter === 1) {
       firstGuess = clicked.dataset.name;
       clicked.classList.add("selected");
+      console.log(firstGuess);
     } else {
       secondGuess = clicked.dataset.name;
       clicked.classList.add("selected");
