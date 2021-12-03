@@ -74,16 +74,15 @@ grid.addEventListener("click", function (e) {
     if (counter === 1) {
       firstGuess = clicked.dataset.name;
       clicked.classList.add("selected");
-      console.log(firstGuess);
     } else {
       secondGuess = clicked.dataset.name;
       clicked.classList.add("selected");
-      console.log(secondGuess);
-      console.log(counter);
     }
-    if (firstGuess === secondGuess) {
-      match();
+    if (firstGuess && secondGuess) {
+      if (firstGuess === secondGuess) {
+        match();
+      }
+      noMatch();
     }
   }
 });
-// console.log(counter);
