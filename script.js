@@ -1,16 +1,16 @@
 let cardArray = [
-  { name: "crocodile", img: "assets/crocodile.png" },
-  { name: "crocodile", img: "assets/crocodile.png" },
-  { name: "dog", img: "assets/dog.png" },
-  { name: "dog", img: "assets/dog.png" },
-  { name: "elephant", img: "assets/elephant.png" },
-  { name: "elephant", img: "assets/elephant.png" },
-  { name: "monkey", img: "assets/monkey.png" },
-  { name: "monkey", img: "assets/monkey.png" },
-  { name: "shark", img: "assets/shark.png" },
-  { name: "shark", img: "assets/shark.png" },
-  { name: "tiger", img: "assets/tiger.png" },
-  { name: "tiger", img: "assets/tiger.png" },
+  { name: "crocodile", value: 1, img: "assets/crocodile.png" },
+  { name: "crocodile", value: 1, img: "assets/crocodile.png" },
+  { name: "dog", value: 2, img: "assets/dog.png" },
+  { name: "dog", value: 2, img: "assets/dog.png" },
+  { name: "elephant", value: 3, img: "assets/elephant.png" },
+  { name: "elephant", value: 3, img: "assets/elephant.png" },
+  { name: "monkey", value: 4, img: "assets/monkey.png" },
+  { name: "monkey", value: 4, img: "assets/monkey.png" },
+  { name: "shark", value: 5, img: "assets/shark.png" },
+  { name: "shark", value: 5, img: "assets/shark.png" },
+  { name: "tiger", value: 6, img: "assets/tiger.png" },
+  { name: "tiger", value: 6, img: "assets/tiger.png" },
 ];
 
 cardArray.sort(() => 0.5 - Math.random());
@@ -29,22 +29,46 @@ startBtn.addEventListener("click", () => {
 cardArray.forEach((item) => {
   const card = document.createElement("div");
   card.classList.add("card");
-  card.dataset.name = item.name;
+  card.dataset.name = item.value;
   card.style.backgroundImage = `url(${item.img})`;
   grid.appendChild(card);
 });
 
-// for (i = 0; i < 12; i++) {
-//   let newCard = document.createElement("div");
-//   newCard.className = "card";
-//   newCard.addEventListener("click", () => {
-//     newCard.style.backgroundColor = "lightgrey";
-//   });
-//   main.append(newCard);
-// }
+let counter = 0;
+let firstGuess = 0;
+let secondGuess = 0;
 
-/*
-for (i = 0; i < animals.length * 2; i++) {
-    console.log(animals);
-};
-*/
+grid.addEventListener("click", function (e) {
+  let clicked = e.target;
+
+  const match = () => {
+    let selected = document.querySelectorAll(".selected");
+    selected.forEach((card) => {
+      card.classList.add("match");
+    });
+  };
+
+  const noMatch = () => {
+    let selected = document.querySelectorAll(".selected");
+    selected.forEach((card) => {
+      clicked.classList.remove("selected");
+    });
+  };
+
+  if (clicked.nodeName === "SECTION") {
+    return;
+  }
+  if (counter < 2) {
+    counter++;
+    if (counter === 1) {
+      firstGuess = clicked.dataset.name;
+      clicked.classList.add("selected");
+    } else {
+      secondGuess = clicked.dataset.name;
+      clicked.classList.add("selected");
+    }
+    if (firstGuess === secondGuess) {
+      match();
+    }
+  }
+});
