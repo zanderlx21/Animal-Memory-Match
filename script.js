@@ -164,10 +164,15 @@ function gameEnd() {
     clearInterval(interval);
     finalTime = timer.innerHTML;
     console.log(finalTime);
-    let winWindow = document.createElement("div");
-    winWindow.classList.add("winWindow");
-    let body = getElementsByTagName("body");
-    body.appendChild(winWindow);
+    let para2 = document.querySelector(".para2");
+    let winningText = `It took you ${finalTime} to complete the game.`;
+    para2.innerHTML = winningText;
+    // let winWindow = document.createElement("div");
+    // winWindow.classList.add("winWindow");
+    // let body = getElementsByTagName("body");
+    // document.body.appendChild(winWindow);
+    // winWindow.innerText = "You Won!!"
+    // let newButton = document.createElement("button")
   } else {
     return;
   }

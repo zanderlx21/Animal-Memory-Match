@@ -65,3 +65,8 @@ body {
 .lock {
   pointer-events: none;
 }
+
+.winWindow {
+  background-color: gray;
+  height: 500px;
+}
