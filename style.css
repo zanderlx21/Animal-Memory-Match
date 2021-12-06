@@ -61,3 +61,7 @@ body {
   transform: rotateY(180deg);
   visibility: hidden;
 }
+
+.lock {
+  pointer-events: none;
+}

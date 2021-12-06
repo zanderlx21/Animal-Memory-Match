@@ -94,11 +94,15 @@ let secondGuess = 0;
 const match = () => {
   let selected = document.querySelectorAll(".selected");
   let match = document.querySelectorAll(".match");
+  grid.classList.add("lock");
   selected.forEach((card) => {
     setTimeout(() => {
       card.classList.add("match");
     }, 1000);
   });
+  setTimeout(() => {
+    grid.classList.remove("lock");
+  }, 1000)
   firstGuess = 0;
   secondGuess = 0;
   counter = 0;
@@ -106,11 +110,15 @@ const match = () => {
 
 const noMatch = () => {
   let selected = document.querySelectorAll(".selected");
+  grid.classList.add("lock");
   selected.forEach((card) => {
     setTimeout(() => {
       card.classList.remove("selected");
     }, 1000);
   });
+  setTimeout(() => {
+    grid.classList.remove("lock");
+  }, 1000)
   firstGuess = 0;
   secondGuess = 0;
   counter = 0;
