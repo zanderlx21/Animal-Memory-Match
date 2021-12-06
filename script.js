@@ -26,7 +26,32 @@ main.appendChild(grid);
 
 startBtn.addEventListener("click", () => {
   start.remove();
+  startTimer()
 });
+
+let second = 0;
+let minute = 0;
+let timer = document.querySelector("#timer");
+let interval;
+function startTimer(){
+    interval = setInterval(function(){
+        timer.innerHTML = minute+"mins "+second+"secs";
+        second++;
+        if(second === 60){
+            minute++;
+            second = 0;
+        }
+        if(minute === 60){
+            hour++;
+            minute = 0;
+        }
+    },1000);
+}
+
+function reset () {
+  location.reload();
+}
+
 
 const scene = document.querySelector(".scene");
 // const cardContainer = document.querySelector(".cardContainer");
