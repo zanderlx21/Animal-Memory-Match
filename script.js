@@ -13,7 +13,7 @@ let cardArray = [
   { name: "tiger", value: 6, img: "assets/tiger.png" },
 ];
 
-cardArray.sort(() => 0.5 - Math.random());
+// cardArray.sort(() => 0.5 - Math.random());
 
 const start = document.getElementById("start");
 const startBtn = document.getElementById("startBtn");
@@ -32,6 +32,7 @@ startBtn.addEventListener("click", () => {
 let second = 0;
 let minute = 0;
 let timer = document.querySelector("#timer");
+let matchedCount = 0;
 let interval;
 function startTimer(){
     interval = setInterval(function(){
@@ -106,6 +107,8 @@ const match = () => {
   firstGuess = 0;
   secondGuess = 0;
   counter = 0;
+  matchedCount++
+  console.log(matchedCount);
 };
 
 const noMatch = () => {
@@ -146,9 +149,26 @@ grid.addEventListener("click", function (e) {
     if (firstGuess && secondGuess) {
       if (firstGuess === secondGuess) {
         match();
+        gameEnd();
       } else {
         noMatch();
       }
     }
   }
 });
+
+let finalTime = 0;
+
+function gameEnd() {
+  if (matchedCount === 6) {
+    clearInterval(interval);
+    finalTime = timer.innerHTML;
+    console.log(finalTime);
+    let winWindow = document.createElement("div");
+    winWindow.classList.add("winWindow");
+    let body = getElementsByTagName("body");
+    body.appendChild(winWindow);
+  } else {
+    return;
+  }
+}
