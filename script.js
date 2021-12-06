@@ -36,25 +36,28 @@ let minute = 0;
 let timer = document.querySelector("#timer");
 let matchedCount = 0;
 let interval;
-function startTimer(){
-    interval = setInterval(function(){
-        timer.innerHTML = minute+"mins "+second+"secs";
-        second++;
-        if(second === 60){
-            minute++;
-            second = 0;
-        }
-        if(minute === 60){
-            hour++;
-            minute = 0;
-        }
-    },1000);
+function startTimer() {
+  interval = setInterval(function () {
+    if (minute === 0) {
+      timer.innerHTML = +second + " seconds";
+    } else {
+      timer.innerHTML = minute + " minutes " + second + " seconds";
+    }
+    second++;
+    if (second === 60) {
+      minute++;
+      second = 0;
+    }
+    if (minute === 60) {
+      hour++;
+      minute = 0;
+    }
+  }, 1000);
 }
 
-function reset () {
+function reset() {
   location.reload();
 }
-
 
 const scene = document.querySelector(".scene");
 // const cardContainer = document.querySelector(".cardContainer");
@@ -105,11 +108,11 @@ const match = () => {
   });
   setTimeout(() => {
     grid.classList.remove("lock");
-  }, 1000)
+  }, 1000);
   firstGuess = 0;
   secondGuess = 0;
   counter = 0;
-  matchedCount++
+  matchedCount++;
   console.log(matchedCount);
 };
 
@@ -123,7 +126,7 @@ const noMatch = () => {
   });
   setTimeout(() => {
     grid.classList.remove("lock");
-  }, 1000)
+  }, 1000);
   firstGuess = 0;
   secondGuess = 0;
   counter = 0;
@@ -169,12 +172,10 @@ function gameEnd() {
     let para2 = document.querySelector(".para2");
     let winningText = `It took you ${finalTime} to complete the game.`;
     para2.innerHTML = winningText;
-    // let winWindow = document.createElement("div");
-    // winWindow.classList.add("winWindow");
-    // let body = getElementsByTagName("body");
-    // document.body.appendChild(winWindow);
-    // winWindow.innerText = "You Won!!"
-    // let newButton = document.createElement("button")
+    let winWindow = document.querySelector(".winWindow");
+    setTimeout(() => {
+      winWindow.style.display = "flex";
+    }, 1500);
   } else {
     return;
   }

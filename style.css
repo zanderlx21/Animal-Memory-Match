@@ -95,10 +95,11 @@ h1 {
 .winWindow {
   background-color: gray;
   height: 200px;
-  /* display: none; */
+  display: none;
   /* display: flex; */
+  flex-direction: column;
   justify-content: center;
-  align-content: center;
+  align-items: center;
   position: absolute;
   text-align: center;
   top: 50%;
