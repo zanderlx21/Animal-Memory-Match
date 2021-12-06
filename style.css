@@ -3,10 +3,10 @@ body {
   position: relative;
 }
 
-.startContainer {
+#startContainer {
   display: flex;
   justify-content: center;
-  align-content: center;
+  align-items: center;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -14,19 +14,22 @@ body {
   z-index: 1;
   height: 35%;
   width: 35%;
-  margin: 0 auto;
+  /* margin: 0 auto; */
+  background-color: blue;
 }
 
 #start {
-  /* height: 35%; */
-  /* width: 35%; */
   background-color: grey;
-  /* position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 1; */
   text-align: center;
+  height: fit-content;
+}
+
+h1 {
+  margin: 20px 5px;
+}
+
+#startBtn {
+  margin-bottom: 20px;
 }
 
 #main {
@@ -91,7 +94,19 @@ body {
 
 .winWindow {
   background-color: gray;
-  height: 500px;
-  display: none;
+  height: 200px;
+  /* display: none; */
+  /* display: flex; */
+  justify-content: center;
+  align-content: center;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* z-index: 1; */
+  /* height: 35%; */
+  width: 35%;
+  margin: 0 auto;
   
 }
