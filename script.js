@@ -26,7 +26,7 @@ main.appendChild(grid);
 
 startBtn.addEventListener("click", () => {
   start.remove();
-  startTimer()
+  startTimer();
 });
 
 let second = 0;
@@ -93,8 +93,11 @@ let secondGuess = 0;
 
 const match = () => {
   let selected = document.querySelectorAll(".selected");
+  let match = document.querySelectorAll(".match");
   selected.forEach((card) => {
-    card.classList.add("match");
+    setTimeout(() => {
+      card.classList.add("match");
+    }, 1000);
   });
   firstGuess = 0;
   secondGuess = 0;

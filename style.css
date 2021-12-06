@@ -59,4 +59,5 @@ body {
 
 .match {
   transform: rotateY(180deg);
+  visibility: hidden;
 }
