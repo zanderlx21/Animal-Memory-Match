@@ -114,19 +114,11 @@ h2 {
 }
 
 #main {
-  /* background: rgb(236, 187, 51);
-  background: linear-gradient(
-    90deg,
-    rgba(236, 187, 51, 1) 0%,
-    white 50%,
-    rgba(253, 187, 45, 1) 100%
-  ); */
   background-image: url("assets/sand-bg.png");
   background-repeat: repeat;
   background-size: 400px;
   background-position: center;
   width: 100%;
-  /* height: auto 0; */
   display: flex;
   justify-content: center;
   padding: 25px 0px;
@@ -142,7 +134,9 @@ h2 {
 .card {
   position: relative;
   transition: all 0.4s linear;
+  -webkit-transition: all 0.4s linear;
   transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
   margin: 7px;
 }
 
@@ -157,6 +151,7 @@ h2 {
 .cardBack {
   position: absolute;
   backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
 .cardBack {
@@ -166,12 +161,15 @@ h2 {
   border-radius: 10px;
   border: 3px solid white;
   transition: 0.1s;
+  -webkit-transition: 0.1s;
 }
 
 .cardBack:hover {
   box-shadow: 5px 5px 0px 1px black;
   transform: scale(1.03);
+  -webkit-transform: scale(1.03);
   transform-origin: bottom;
+  -webkit-transform-origin: bottom;
   cursor: pointer;
 }
 
@@ -184,6 +182,7 @@ h2 {
 
 .selected {
   transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
 }
 
 .match {
