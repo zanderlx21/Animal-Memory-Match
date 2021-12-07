@@ -274,6 +274,7 @@ h2 {
   height: 500px;
   width: 300px;
   margin: 0 auto;
+  line-height: 15px;
 }
 
 #playAgain {
@@ -291,4 +292,14 @@ h2 {
   background-color: rgba(253, 187, 45, 1);
   box-shadow: 3px 3px 0px 1px black;
   color: black;
+}
+
+.pTime,
+.pMoves {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+p {
+  font-size: 1.2rem;
 }

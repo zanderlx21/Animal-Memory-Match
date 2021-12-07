@@ -163,9 +163,12 @@ function gameEnd() {
     clearInterval(interval);
     finalTime = timer.innerHTML;
     console.log(finalTime);
-    let para2 = document.querySelector(".para2");
-    let winningText = `It took you ${minute} minutes ${second} seconds \n & ${moves} moves to complete the game.`;
-    para2.innerHTML = winningText;
+    let pTime = document.querySelector(".pTime");
+    let pMoves = document.querySelector(".pMoves");
+    let winningTime = `${minute} minutes & ${second} seconds`;
+    let winningMoves = `${moves} moves`;
+    pTime.innerHTML = winningTime;
+    pMoves.innerHTML = winningMoves;
     let winWindow = document.querySelector(".winWindow");
     setTimeout(() => {
       winWindow.style.display = "flex";
