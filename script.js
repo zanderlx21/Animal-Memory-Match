@@ -20,6 +20,7 @@ const startBtn = document.getElementById("startBtn");
 const main = document.getElementById("main");
 const grid = document.createElement("section");
 const startContainer = document.getElementById("startContainer");
+const header = document.getElementById("header");
 
 grid.setAttribute("class", "grid");
 
@@ -28,6 +29,7 @@ main.appendChild(grid);
 startBtn.addEventListener("click", () => {
   start.remove();
   startContainer.remove();
+  header.style.display = "flex";
   startTimer();
 });
 
