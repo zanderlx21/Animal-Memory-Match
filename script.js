@@ -46,12 +46,11 @@ let matchedCount = 0;
 let interval;
 function startTimer() {
   interval = setInterval(function () {
-    if (minute === 0) {
+    if (second < 10) {
+      timer.innerHTML = minute + ":0" + second;
+    } else {
       timer.innerHTML = minute + ":" + second;
     }
-    // else {
-    //   timer.innerHTML = minute + " minutes " + second + " seconds";
-    // }
     second++;
     if (second === 60) {
       minute++;
@@ -95,7 +94,6 @@ let secondGuess = 0;
 
 const match = () => {
   let selected = document.querySelectorAll(".selected");
-  // let match = document.querySelectorAll(".match");
   grid.classList.add("lock");
   moves++;
   movesCounter.innerHTML = "Moves: " + moves;
@@ -117,11 +115,6 @@ const noMatch = () => {
   grid.classList.add("lock");
   moves++;
   movesCounter.innerHTML = "Moves: " + moves;
-  // selected.forEach((card) => {
-  //   setTimeout(() => {
-  //     card.classList.add("noMatch");
-  //   }, 500);
-  // });
   selected.forEach((card) => {
     setTimeout(() => {
       card.classList.remove("selected");
