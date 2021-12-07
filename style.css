@@ -240,36 +240,43 @@ h2 {
   padding: 20px;
   background-color: rgb(13, 189, 131);
   border-top: 4px solid black;
-  /* background-image: url("assets/sand-bg.png");
-  background-repeat: repeat;
-  background-size: 400px;
-  background-position: center; */
 }
 
 .tm-container {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 #timer {
-  border: 1.5px solid black;
-  box-shadow: 3px 3px 0px 1px black;
+  font-family: "Orbitron", sans-serif;
+  font-size: 3rem;
+  color: white;
+  /* border: 1.5px solid black; */
+  /* box-shadow: 3px 3px 0px 1px black; */
   border-radius: 5px;
   padding: 10px;
   width: 200px;
-  margin-bottom: 10px;
-  background-color: white;
+  /* margin-bottom: 10px; */
+  /* background-color: white; */
 }
 
 #moves {
-  border: 1.5px solid black;
-  box-shadow: 3px 3px 0px 1px black;
+  font-family: "Orbitron", sans-serif;
+  color: white;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* border: 1.5px solid black; */
+  /* box-shadow: 3px 3px 0px 1px black; */
   border-radius: 5px;
   padding: 10px;
   width: 200px;
-  margin-bottom: 10px;
-  background-color: white;
+  /* margin-bottom: 10px; */
+  /* background-color: white; */
 }
 
 #reset {
