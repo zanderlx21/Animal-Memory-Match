@@ -17,8 +17,10 @@ html {
   width: 100%;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   position: absolute;
+  padding-top: 100px;
+  padding-right: 25px;
   z-index: 1;
   background: rgb(13, 189, 131);
   background: linear-gradient(
@@ -98,12 +100,6 @@ h1 {
   display: none;
   justify-content: center;
   background: rgb(13, 189, 131);
-  /* background: linear-gradient(
-    90deg,
-    rgba(253, 187, 45, 1) 0%,
-    rgba(13, 189, 131, 1) 50%,
-    rgba(253, 187, 45, 1) 100%
-  ); */
   border-bottom: 4px solid black;
 }
 
@@ -111,6 +107,7 @@ h2 {
   font-family: "Zen Tokyo Zoo", cursive;
   font-size: 3rem;
   margin: 10px;
+  color: white;
 }
 
 #main {
@@ -143,8 +140,8 @@ h2 {
 .card,
 .cardFront,
 .cardBack {
-  height: 160px;
-  width: 125px;
+  height: 140px;
+  width: 105px;
 }
 
 .cardFront,
@@ -187,44 +184,7 @@ h2 {
 }
 
 .match {
-  /* transform: scale(1.03); */
   visibility: hidden;
-  /* opacity: 0;
-  transition: visibility 0s 1s, opacity 1s linear; */
-}
-
-/* .noMatch {
-  animation: shake 0.2s 1;
-}
-
-@keyframes shake {
-  0% {
-    transform: translateX(0px);
-  }
-  20% {
-    transform: translateX(-4px);
-  }
-  40% {
-    transform: translateX(-2px);
-  }
-  60% {
-    transform: translateX(4px);
-  }
-  80% {
-    transform: translateX(2px);
-  }
-  100% {
-    transform: translateX(0px);
-  }
-} */
-
-/* .match .back {
-  background: white;
-} */
-
-.matchHide {
-  /* transform: scale(1.03); */
-  /* transform: rotateY(180deg); */
 }
 
 .lock {
@@ -312,7 +272,7 @@ h2 {
   left: 50%;
   transform: translate(-50%, -70%);
   height: 500px;
-  width: 400px;
+  width: 300px;
   margin: 0 auto;
 }
 

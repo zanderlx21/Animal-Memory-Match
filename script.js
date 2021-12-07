@@ -164,7 +164,7 @@ function gameEnd() {
     finalTime = timer.innerHTML;
     console.log(finalTime);
     let para2 = document.querySelector(".para2");
-    let winningText = `It took you ${finalTime} to complete the game.`;
+    let winningText = `It took you ${minute} minutes ${second} seconds \n & ${moves} moves to complete the game.`;
     para2.innerHTML = winningText;
     let winWindow = document.querySelector(".winWindow");
     setTimeout(() => {
