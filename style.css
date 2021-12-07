@@ -175,6 +175,7 @@ h2 {
 
 .cardFront {
   transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center center;
