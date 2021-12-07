@@ -1,9 +1,10 @@
 body {
   margin: 0;
   position: relative;
-  /* min-height: 100vh; */
+  min-height: 100vh;
   min-height: -webkit-fill-available;
   font-family: Arial, Helvetica, sans-serif;
+  background-color: rgb(13, 189, 131);
 }
 
 html {
@@ -200,6 +201,7 @@ h2 {
   padding: 20px;
   background-color: rgb(13, 189, 131);
   border-top: 4px solid black;
+  padding-bottom: ;
 }
 
 .tm-container {
@@ -320,7 +322,11 @@ p {
   .card,
   .cardFront,
   .cardBack {
-    height: 160px;
-    width: 125px;
+    height: 180px;
+    width: 145px;
+  }
+
+  .grid {
+    max-width: 700px;
   }
 }
