@@ -6,16 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Animal Memory Game</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Zen+Tokyo+Zoo&display=swap"
+      rel="stylesheet"
+    />
   </head>
 
   <body>
     <div id="startContainer">
-    <div id="start">
-      <h1>Animal Memory Game</h1>
-      <button type="submit" id="startBtn">START</button>
+      <div id="start">
+        <h1>Animal Memory Game</h1>
+        <button type="submit" id="startBtn">
+          <div class="start">START</div>
+        </button>
+      </div>
     </div>
-    </div>
-
 
     <div id="main"></div>
 
@@ -26,17 +33,12 @@
         <button type="submit" id="reset" onclick="reset()">RESET</button>
       </div>
     </div>
-<div class="winWindow">
-  <p>
-     You Won!!
-  </p>
-  <p class="para2">
-    
-  </p>
- 
-  <button type="submit" id="playAgain" onclick="reset()">PLAY AGAIN</button>
+    <div class="winWindow">
+      <p>You Won!!</p>
+      <p class="para2"></p>
 
-</div>
+      <button type="submit" id="playAgain" onclick="reset()">PLAY AGAIN</button>
+    </div>
     <script src="script.js"></script>
   </body>
 </html>

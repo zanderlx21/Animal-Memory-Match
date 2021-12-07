@@ -31,6 +31,11 @@ startBtn.addEventListener("click", () => {
   startTimer();
 });
 
+function reset() {
+  location.reload();
+}
+
+// TIMER
 let second = 0;
 let minute = 0;
 let timer = document.querySelector("#timer");
@@ -39,7 +44,7 @@ let interval;
 function startTimer() {
   interval = setInterval(function () {
     if (minute === 0) {
-      timer.innerHTML = +second + " seconds";
+      timer.innerHTML = second + " seconds";
     } else {
       timer.innerHTML = minute + " minutes " + second + " seconds";
     }
@@ -55,16 +60,11 @@ function startTimer() {
   }, 1000);
 }
 
-function reset() {
-  location.reload();
-}
-
+// CREATE CARDS
 const scene = document.querySelector(".scene");
-// const cardContainer = document.querySelector(".cardContainer");
 const cardFront = document.querySelector(".cardFront");
 const cardBack = document.querySelector(".cardBack");
 
-// ADDING PARENT CONTAINER SCENE
 cardArray.forEach((item) => {
   // CARD
   const card = document.createElement("div");
@@ -75,23 +75,12 @@ cardArray.forEach((item) => {
   const card2 = document.createElement("div");
   card2.classList.add("cardFront");
   card2.style.backgroundImage = `url(${item.img})`;
-  //   card2.dataset.name = item.value;
   card.appendChild(card2);
   // CARD BACK
   const card3 = document.createElement("div");
   card3.classList.add("cardBack");
-  //   card3.dataset.name = item.value;
-  //   card3.style.backgroundColor = "red";
   card.appendChild(card3);
 });
-
-// cardArray.forEach((item) => {
-//   const card = document.createElement("div");
-//   card.classList.add("card");
-//   card.dataset.name = item.value;
-//   card.style.backgroundImage = `url(${item.img})`;
-//   grid.appendChild(card);
-// });
 
 let counter = 0;
 let firstGuess = 0;
@@ -99,16 +88,15 @@ let secondGuess = 0;
 
 const match = () => {
   let selected = document.querySelectorAll(".selected");
-  let match = document.querySelectorAll(".match");
+  // let match = document.querySelectorAll(".match");
   grid.classList.add("lock");
   selected.forEach((card) => {
     setTimeout(() => {
+      grid.classList.remove("lock");
+      // card.classList.remove("selected");
       card.classList.add("match");
     }, 1000);
   });
-  setTimeout(() => {
-    grid.classList.remove("lock");
-  }, 1000);
   firstGuess = 0;
   secondGuess = 0;
   counter = 0;
@@ -119,14 +107,17 @@ const match = () => {
 const noMatch = () => {
   let selected = document.querySelectorAll(".selected");
   grid.classList.add("lock");
+  // selected.forEach((card) => {
+  //   setTimeout(() => {
+  //     card.classList.add("noMatch");
+  //   }, 500);
+  // });
   selected.forEach((card) => {
     setTimeout(() => {
       card.classList.remove("selected");
+      grid.classList.remove("lock");
     }, 1000);
   });
-  setTimeout(() => {
-    grid.classList.remove("lock");
-  }, 1000);
   firstGuess = 0;
   secondGuess = 0;
   counter = 0;
