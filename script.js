@@ -21,6 +21,7 @@ const main = document.getElementById("main");
 const grid = document.createElement("section");
 const startContainer = document.getElementById("startContainer");
 const header = document.getElementById("header");
+const movesCounter = document.getElementById("moves");
 
 grid.setAttribute("class", "grid");
 
@@ -46,10 +47,11 @@ let interval;
 function startTimer() {
   interval = setInterval(function () {
     if (minute === 0) {
-      timer.innerHTML = second + " seconds";
-    } else {
-      timer.innerHTML = minute + " minutes " + second + " seconds";
+      timer.innerHTML = minute + ":" + second;
     }
+    // else {
+    //   timer.innerHTML = minute + " minutes " + second + " seconds";
+    // }
     second++;
     if (second === 60) {
       minute++;
@@ -61,6 +63,9 @@ function startTimer() {
     }
   }, 1000);
 }
+
+//MOVES
+let moves = 0;
 
 // CREATE CARDS
 const scene = document.querySelector(".scene");
@@ -92,10 +97,12 @@ const match = () => {
   let selected = document.querySelectorAll(".selected");
   // let match = document.querySelectorAll(".match");
   grid.classList.add("lock");
+  moves++;
+  movesCounter.innerHTML = "Moves: " + moves;
+  console.log(moves);
   selected.forEach((card) => {
     setTimeout(() => {
       grid.classList.remove("lock");
-      // card.classList.remove("selected");
       card.classList.add("match");
     }, 1000);
   });
@@ -103,12 +110,13 @@ const match = () => {
   secondGuess = 0;
   counter = 0;
   matchedCount++;
-  console.log(matchedCount);
 };
 
 const noMatch = () => {
   let selected = document.querySelectorAll(".selected");
   grid.classList.add("lock");
+  moves++;
+  movesCounter.innerHTML = "Moves: " + moves;
   // selected.forEach((card) => {
   //   setTimeout(() => {
   //     card.classList.add("noMatch");
