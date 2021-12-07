@@ -23,6 +23,8 @@ const startContainer = document.getElementById("startContainer");
 const header = document.getElementById("header");
 const movesCounter = document.getElementById("moves");
 
+totalClicks = 0;
+
 grid.setAttribute("class", "grid");
 
 main.appendChild(grid);
@@ -31,7 +33,6 @@ startBtn.addEventListener("click", () => {
   start.remove();
   startContainer.remove();
   header.style.display = "flex";
-  startTimer();
 });
 
 function reset() {
@@ -44,6 +45,7 @@ let minute = 0;
 let timer = document.querySelector("#timer");
 let matchedCount = 0;
 let interval;
+
 function startTimer() {
   interval = setInterval(function () {
     if (second < 10) {
@@ -138,6 +140,8 @@ grid.addEventListener("click", function (e) {
 
   if (counter < 2) {
     counter++;
+    totalClicks++;
+    console.log(totalClicks + "hey");
     if (counter === 1) {
       firstGuess = clicked.parentNode.dataset.name;
       clicked.parentNode.classList.add("selected");
@@ -153,6 +157,9 @@ grid.addEventListener("click", function (e) {
         noMatch();
       }
     }
+  }
+  if (totalClicks === 1) {
+    startTimer();
   }
 });
 
