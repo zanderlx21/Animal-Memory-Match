@@ -167,6 +167,11 @@ function gameEnd() {
     let pMoves = document.querySelector(".pMoves");
     let winningTime = `${minute} minutes & ${second} seconds`;
     let winningMoves = `${moves} moves`;
+    if (minute < 1) {
+      winningTime = `${second} seconds`;
+    } else if (minute === 1) {
+      winningTime = `${minute} minute & ${second} seconds`;
+    }
     pTime.innerHTML = winningTime;
     pMoves.innerHTML = winningMoves;
     let winWindow = document.querySelector(".winWindow");
