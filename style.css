@@ -106,8 +106,8 @@ h1 {
 
 h2 {
   font-family: "Zen Tokyo Zoo", cursive;
-  font-size: 3rem;
-  margin: 10px;
+  font-size: 2.5rem;
+  margin: 5px;
   color: white;
 }
 
@@ -199,7 +199,6 @@ h2 {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding: 20px;
   background-color: rgb(13, 189, 131);
   border-top: 4px solid black;
 }
@@ -214,31 +213,23 @@ h2 {
 
 #timer {
   font-family: "Orbitron", sans-serif;
-  font-size: 3rem;
+  font-size: 2rem;
   color: white;
-  /* border: 1.5px solid black; */
-  /* box-shadow: 3px 3px 0px 1px black; */
   border-radius: 5px;
   padding: 10px;
-  width: 200px;
-  /* margin-bottom: 10px; */
-  /* background-color: white; */
+  width: 150px;
 }
 
 #moves {
   font-family: "Orbitron", sans-serif;
   color: white;
-  font-size: 2rem;
+  font-size: 1.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  /* border: 1.5px solid black; */
-  /* box-shadow: 3px 3px 0px 1px black; */
   border-radius: 5px;
   padding: 10px;
-  width: 200px;
-  /* margin-bottom: 10px; */
-  /* background-color: white; */
+  width: 150px;
 }
 
 #reset {
@@ -280,8 +271,8 @@ h2 {
   padding: 20px;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -60%);
-  -webkit-transform: translate(-50%, -65%);
+  transform: translate(-50%, -55%);
+  -webkit-transform: translate(-50%, -55%);
   height: 500px;
   width: 300px;
   margin: 0 auto;
@@ -345,5 +336,13 @@ p {
   .winWindow {
     transform: translate(-50%, -50%);
     -webkit-transform: translate(-50%, -65%);
+  }
+  h2 {
+    margin: 10px;
+    font-size: 3rem;
+  }
+
+  #timer {
+    font-size: 3rem;
   }
 }
