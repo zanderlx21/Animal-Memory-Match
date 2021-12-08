@@ -258,6 +258,14 @@ h2 {
   color: black;
 }
 
+#trophy {
+  height: 130px;
+}
+
+.plusSign {
+  margin: 0;
+}
+
 .winWindow {
   background-color: white;
   border: 1.5px solid black;

@@ -57,7 +57,7 @@ startBtn.addEventListener("click", () => {
 function deal() {
   grid.setAttribute("class", "grid");
   main.appendChild(grid);
-  cardArray.sort(() => 0.5 - Math.random());
+  // cardArray.sort(() => 0.5 - Math.random());
   // ^^^^ SHUFFLE RANDOMIZER ^^^^
   cardArray.forEach((item) => {
     // CARD
