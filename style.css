@@ -344,5 +344,11 @@ p {
 
   #timer {
     font-size: 3rem;
+    width: 200px;
+  }
+
+  #moves {
+    font-size: 2rem;
+    width: 200px;
   }
 }
