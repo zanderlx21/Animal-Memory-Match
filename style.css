@@ -20,7 +20,7 @@ html {
   justify-content: center;
   align-items: flex-start;
   position: absolute;
-  padding-top: 100px;
+  padding-top: 200px;
   padding-right: 25px;
   z-index: 1;
   background: rgb(13, 189, 131);
@@ -37,7 +37,7 @@ html {
   box-shadow: 10px 10px 0px 3px black;
   text-align: center;
   height: 250px;
-  width: auto;
+  width: 80%;
   padding: 0 20px;
   display: flex;
   flex-direction: column;
@@ -172,6 +172,7 @@ h2 {
 }
 
 .cardFront {
+  /* background-color: white; */
   transform: rotateY(180deg);
   -webkit-transform: rotateY(180deg);
   background-size: contain;
@@ -318,6 +319,10 @@ p {
     padding-right: 0;
   }
 
+  #start {
+    width: 625px;
+  }
+
   .card,
   .cardFront,
   .cardBack {
@@ -327,5 +332,10 @@ p {
 
   .grid {
     max-width: 700px;
+  }
+
+  .winWindow {
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -65%);
   }
 }
