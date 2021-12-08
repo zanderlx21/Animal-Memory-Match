@@ -45,6 +45,10 @@ let moves = 0;
 // TOTAL GAME TIME VARIABLE
 let finalTime = 0;
 
+// AUDIO VARIABLE
+// const noMatchAudio = new audio();
+// audio.src = "assets/noMatchSFX.mp3"
+
 // START SCREEN BUTTON
 startBtn.addEventListener("click", () => {
   start.remove();
@@ -57,7 +61,7 @@ startBtn.addEventListener("click", () => {
 function deal() {
   grid.setAttribute("class", "grid");
   main.appendChild(grid);
-  // cardArray.sort(() => 0.5 - Math.random());
+  cardArray.sort(() => 0.5 - Math.random());
   // ^^^^ SHUFFLE RANDOMIZER ^^^^
   cardArray.forEach((item) => {
     // CARD
@@ -139,6 +143,7 @@ function gameEnd() {
 }
 
 // MAIN GAME LOGIC
+// TO VOID CLICKING ANYTHING THAT ISN'T A CARD
 grid.addEventListener("click", function (e) {
   const clicked = e.target;
   if (
@@ -149,6 +154,7 @@ grid.addEventListener("click", function (e) {
     return;
   }
 
+// ADDING CLICKS TO COUNTER  
   if (counter < 2) {
     counter++;
     totalClicks++;
@@ -169,6 +175,7 @@ grid.addEventListener("click", function (e) {
       }
     }
   }
+  // STARTS TIMER ON FIRST CLICK OF CARD
   if (totalClicks === 1) {
     startTimer();
   }
