@@ -45,10 +45,6 @@ let moves = 0;
 // TOTAL GAME TIME VARIABLE
 let finalTime = 0;
 
-// AUDIO VARIABLE
-// const noMatchAudio = new audio();
-// audio.src = "assets/noMatchSFX.mp3"
-
 // START SCREEN BUTTON
 startBtn.addEventListener("click", () => {
   start.remove();
